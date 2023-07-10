@@ -1,0 +1,14 @@
+.cont {
+  background-color: rgb(231, 135, 18);
+  padding: 10px;
+  color: aqua;
+}
+input {
+  height: 12%;
+  font-size: 1.5rem ;
+}
+button {
+  height: 12%;
+  font-weight: bolder;
+  font-size: larger;
+}

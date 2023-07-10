@@ -1,0 +1,13 @@
+.cont {
+  background-color: bisque;
+  padding: 10px;
+}
+input {
+  height: 12%;
+  font-size: 1.5rem ;
+}
+button {
+  height: 12%;
+  font-weight: bolder;
+  font-size: larger;
+}
