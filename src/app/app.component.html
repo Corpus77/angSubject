@@ -1,13 +1,17 @@
 <div class="cont">
   <header>
-     <app-comp1></app-comp1>
-     <app-comp2></app-comp2>
-
+    <app-comp1></app-comp1>
+    <app-comp2></app-comp2>
   </header>
-  <p> From component1: {{comp1}}</p>
-  <p> From component2: {{comp2}}</p>
+  <p>From component1: {{ comp1 }}</p>
+  <p>From component2: {{ comp2 }}</p>
+  <!-- <div class="if" *ngIf="busService.text$.asObservable()  | async as text">
+  </div> -->
+  
+    <div class="for" *ngFor="let item of arrValue ">
+      <p>{{item}}</p>
+    </div>
 </div>
-
 
 <style>
   * {
@@ -16,9 +20,8 @@
     box-sizing: border-box;
   }
   .cont {
-   width: 99vw;
-   height: 98vh;
-   
+    width: 99vw;
+    height: 98vh;
   }
   header {
     display: flex;
@@ -33,5 +36,4 @@
   p {
     font-size: 20px;
   }
-  
 </style>
