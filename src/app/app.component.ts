@@ -11,21 +11,26 @@ export class AppComponent implements OnInit, OnDestroy {
   comp1: string = 'default';
   comp2: string = 'default';
   arrValue: any = [];
-  coordX: number
+  coordX: number;
+  keyUpCode: number;
   constructor(public busService: BusService) { }
 
   ngOnInit(): void {
     //
     const el = document.querySelector('.cont');
     const eventMouse = this.busService.eventBus(el, 'mousemove');
+    const eventKeyUp = this.busService.eventBus(el, 'keyup');
+    const eventUpSuscribe = eventKeyUp.subscribe(evt => {
+      this.keyUpCode = evt.keyCode;
+      console.log(evt.keyCode)})
     const eventMouseSuscribe = eventMouse.pipe(debounceTime(50))
       .subscribe(evt => {
-        //console.log(evt.offsetX);
-        this.coordX = evt.clientX
+        //console.log(evt);
+        this.coordX = evt.clientX 
       })
 
     //
-    console.log(eventMouseSuscribe);
+    //console.log(eventMouseSuscribe);
     
     this.busService.text$.pipe(map(val => val.toUpperCase())).subscribe((value) => {
       this.comp1 = value;
